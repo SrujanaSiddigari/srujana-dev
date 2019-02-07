@@ -1,0 +1,11 @@
+.wrap{
+    margin-top:200px;
+}
+.qode-outer-space article{
+    width:20% !important;
+    float:left;
+}
+article img{
+    width:20%;
+    height:120px;
+}
