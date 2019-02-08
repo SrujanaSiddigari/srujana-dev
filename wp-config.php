@@ -45,7 +45,7 @@ $_SERVER['HTTP_HOST'] == 'www.coete.co') {
 
 
 
-define('DB_NAME', 'coetedb');
+define('DB_NAME', 'adityars_coetedb');
 
 /** MySQL database username */
 define('DB_USER', 'adityars_srujana');
