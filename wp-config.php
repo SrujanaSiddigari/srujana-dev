@@ -111,7 +111,7 @@ $table_prefix  = 'wp_';
 /**
 
 
-/**
+/*
  * For developers: WordPress debugging mode.
  *
  * Change this to true to enable the display of notices during development.
