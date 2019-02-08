@@ -28,41 +28,58 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
     $db_user = 'root';
     $db_pass = '';
     $db_host = 'localhost';
-} else if ($_SERVER['HTTP_HOST'] == 'coete-dev.9wuev8nq63.us-east-1.elasticbeanstalk.com' || 
-$_SERVER['HTTP_HOST'] == 'dev.coete.co') {
-    $db_name = 'coete_dev_db';
-    $db_user = 'coete_dev_db';
-    $db_pass = 'coete-dev-db';
-    $db_host = 'coete-dev-db.cizykhfl5mwn.us-east-1.rds.amazonaws.com';
-} else if ($_SERVER['HTTP_HOST'] == 'coete-prod.9wuev8nq63.us-east-1.elasticbeanstalk.com' || 
-$_SERVER['HTTP_HOST'] == 'www.coete.co') {
-	$db_name = 'coete_prod';
-    $db_user = 'coete_dev_db';
-    $db_pass = 'coete-dev-db';
-    $db_host = 'coete-dev-db.cizykhfl5mwn.us-east-1.rds.amazonaws.com';
-
 }
+else {
+    $db_name = 'adityars_coetedb';
+    $db_user = 'adityars_srujana';
+    $db_pass = 'srujana';
+    $db_host = 'localhost';
+}
+// } else if ($_SERVER['HTTP_HOST'] == 'coete-dev.9wuev8nq63.us-east-1.elasticbeanstalk.com' || 
+// $_SERVER['HTTP_HOST'] == 'dev.coete.co') {
+//     $db_name = 'coete_dev_db';
+//     $db_user = 'coete_dev_db';
+//     $db_pass = 'coete-dev-db';
+//     $db_host = 'coete-dev-db.cizykhfl5mwn.us-east-1.rds.amazonaws.com';
+// } else if ($_SERVER['HTTP_HOST'] == 'coete-prod.9wuev8nq63.us-east-1.elasticbeanstalk.com' || 
+// $_SERVER['HTTP_HOST'] == 'www.coete.co') {
+// 	$db_name = 'coete_prod';
+//     $db_user = 'coete_dev_db';
+//     $db_pass = 'coete-dev-db';
+//     $db_host = 'coete-dev-db.cizykhfl5mwn.us-east-1.rds.amazonaws.com';
+
+// }
 
 
-
-define('DB_NAME', 'adityars_coetedb');
+define('DB_NAME', $db_name);
 
 /** MySQL database username */
-define('DB_USER', 'adityars_srujana');
+define('DB_USER', $db_user);
 
 
 /** MySQL database password */
-define('DB_PASSWORD', 'srujana');
+define('DB_PASSWORD', $db_pass);
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', $db_host);
+//define('DB_NAME', 'adityars_coetedb');
+
+/** MySQL database username */
+//define('DB_USER', 'adityars_srujana');
+
+
+/** MySQL database password */
+//define('DB_PASSWORD', 'srujana');
+
+/** MySQL hostname */
+//define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-
+//
 /**#@+
  * Authentication Unique Keys and Salts.
  *
