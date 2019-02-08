@@ -45,17 +45,17 @@ $_SERVER['HTTP_HOST'] == 'www.coete.co') {
 
 
 
-define('DB_NAME', $db_name);
+define('DB_NAME', 'coetedb');
 
 /** MySQL database username */
-define('DB_USER', $db_user);
+define('DB_USER', 'adityars_srujana');
 
 
 /** MySQL database password */
-define('DB_PASSWORD', $db_pass);
+define('DB_PASSWORD', 'srujana');
 
 /** MySQL hostname */
-define('DB_HOST', $db_host);
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
