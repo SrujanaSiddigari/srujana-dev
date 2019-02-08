@@ -109,15 +109,7 @@ define('NONCE_SALT',       'm>RW+&[/X<F&|4kW#x~SRVJF3qa;H8hTZa4`(ss`c9,_kE)9+i>e
 $table_prefix  = 'wp_';
 
 /**
- * Below parameter is used for S3 Bucket
- */
-// define('S3_KEY','AKIAJGZSM2PDFAURN4OA');
 
-// define('S3_SECRET','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');
-
-// define('S3_REGION','us-east-1');
-
-// define('S3_BUCKET','coete-dev');
 
 /**
  * For developers: WordPress debugging mode.
