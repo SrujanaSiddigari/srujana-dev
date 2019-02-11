@@ -9,7 +9,6 @@ if ($_GET['term']) {
             'display_name',
         ),
     );
-    
     $users = get_users( $args );
     foreach ($users as $user) {
         $array['value'] = $user->display_name;
