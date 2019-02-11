@@ -131,7 +131,6 @@ get_header();
     'user_email' => $useremail,
     'role' => 'company'
    );
-  }
   // print_r($data);
    global $wpdb;
   $userid= wp_insert_user($data);
@@ -145,7 +144,7 @@ get_header();
    update_user_meta($userid,'mepr_state',$_POST['mepr_state']);
   update_user_meta($userid,'mepr_zipcode',$_POST['mepr_zipcode']);
  } 
-
+   }
 ?>
 <?php
 get_footer();
