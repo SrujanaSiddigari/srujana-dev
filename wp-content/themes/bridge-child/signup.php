@@ -120,7 +120,7 @@ get_header();
 </html>
 <?php
 
-   if(isset($_POST['BtnSubmit']){
+   if(isset($_POST['BtnSubmit'])){
     $userName = get_radnom_unique_username();
     $userpass = $_POST['pass'];
     $useremail = $_POST['email'];
