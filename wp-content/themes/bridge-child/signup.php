@@ -119,6 +119,10 @@ get_header();
 </body>
 </html>
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> b86dcdb43297a9b27f8684f8e046c95d722e7a37
    if(isset($_POST['BtnSubmit'])){
     $userName = get_radnom_unique_username();
     $userpass = $_POST['pass'];
