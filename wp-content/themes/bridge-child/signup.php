@@ -79,7 +79,14 @@ get_header();
 <label>Address2</label>
 <input type="text" class="form-control" name="mepr_address2" size="40">
 </div>
-
+<div>
+<label>Primary Administration name</label>
+<input type="text" class="form-control" name="mepr_primary_administrator_name" size="40">
+</div>
+<div>
+<label>Primary Administration email</label>
+<input type="text" class="form-control" name="mepr_primary_administrator_email" size="40">
+</div>
 <div>
 <label>City</label>
 <input type="text" name="mepr_cityname" class="form-control" size="40">
@@ -116,13 +123,15 @@ get_header();
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>
 <?php
-<<<<<<< HEAD
-=======
-
->>>>>>> b86dcdb43297a9b27f8684f8e046c95d722e7a37
    if(isset($_POST['BtnSubmit'])){
     $userName = get_radnom_unique_username();
     $userpass = $_POST['pass'];
@@ -147,6 +156,9 @@ get_header();
    update_user_meta($userid,'mepr_cityname',$_POST['mepr_cityname']);
    update_user_meta($userid,'mepr_state',$_POST['mepr_state']);
   update_user_meta($userid,'mepr_zipcode',$_POST['mepr_zipcode']);
+  update_user_meta($userid,'mepr_primary_administrator_name',$_POST['mepr_primary_administrator_name']);
+  update_user_meta($userid,'mepr_primary_administrator_email',$_POST['mepr_primary_administrator_email']);
+
  } 
    }
 ?>
