@@ -1,51 +1,81 @@
-<?php
-/* 
-Template Name:Company details
-*/
-get_header();
-?>
-<head>
-    <style>
-        #tbl{
-            margin-top:200px;
-        }
-    </style>
-</head>
-<table id="tbl">
-    <thead>
-    <tr>
-       <th>Companyname</th>
-        <th>Primary admin_name</th>
-        <th>Priamry admin_email</th>
-        <th>Country</th>
-        <th>State</th>
-        <th>City</th>
-</tr>
-</thead>
-<tbody>
+<?php 
+ /* Template Name: Company details */ 
+
+ // if (!is_user_logged_in()) {
+//      wp_redirect(site_url() . '/signin');
+//     exit;
+// }
+
+ //$current_user = wp_get_current_user();
+ ?>
+
+ <?php include( get_stylesheet_directory() . '/dash-header.php'); ?>
+
+<div class="content">
+<div class="container-fluid tab-info-sec">
+<div class="row">	
+<div class="roaster-table col-md-12 col-md-offset-2">
+    <div class="alert mt-20 alert-success alert-dismissible text-center responseSuccess" style="display:none;">
+                                
+    </div>
+    <div class="alert mt-20 alert-danger alert-dismissible text-center responseError" style="display:none;">
+                                
+    </div>
+    <table class="table-header" id="assoc">
+	<thead>
+		<tr class="table-heading">
+         <th>Company Name #</th>
+		  <th>Primary Admin Name</th>
+		  <th>Primary Admail Email</th>
+		  <th>City</th>
+          <th>State</th>
+		 <th>Country</th>
+		</tr>
+	</thead>
+	<tbody>
     <?php
     $arg = array(
     'role' => 'company',
-    'meta_query' => array(
-        array(
-            'key'     => 'mepr_company_name',
-            'value'   => get_user_meta($current_user->ID,'mepr_company_name',true)
-        )
-    )
+    'order by' => 'DESC'
     );
-    $users= get_users($arg);
-     foreach($users as $key => $user){
-         ?>
-         <tr>
-         <td><?php echo $user->user_login; ?></td>
-         <td><?php echo $user->display_name; ?></td>
-        </tr>
-    <?php
-         
-     }
-    ?>
-</tbody>
+                
+                $users = get_users($arg);
+                if (!empty($users)) {
+                    foreach ($users as $key=>$user) {
+                  if(get_user_meta($user->ID,'mepr_companyname',true)!=""){
+            ?>
+	    <tr>	
+        <td><?php echo get_user_meta($user->ID,'mepr_companyname',true);?></td>
+        <td><?php echo get_user_meta($user->ID,'mepr_primary_admin_name',true);?></td>
+        <td><?php echo get_user_meta($user->ID,'mepr_primary_admin_email',true);?></td>
+        <td><?php echo get_user_meta($user->ID,'mepr_cityname',true);?></td>
+        <td><?php echo get_user_meta($user->ID,'mepr_state',true);?></td>
+        <td><?php echo get_user_meta($user->ID,'mepr_countryname',true);?></td>
+	    </tr>
+        <?php
+                  }
+            }
+          }
+            ?>
+    </tbody>
+    <tfoot>
+              <tr>
+                <th>CompanyName</th>
+                <th>Primary admin name</th>
+                <th>Primary admin email</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+            </tr>
+        </tfoot>
 </table>
-<?php
-get_footer();
-?>
+<div class="table-btn">
+	<a href="<?php echo site_url(); ?>/send-invite?type=trainer">Add Trainer</a>
+	<a href="javascript:;" class="deactiveAcc">Save Change</a>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+<?php include( get_stylesheet_directory() . '/dash-footer.php'); ?>

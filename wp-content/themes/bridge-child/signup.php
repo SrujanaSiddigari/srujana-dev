@@ -2,35 +2,13 @@
 /*
  Template Name:Signup page
 */
-get_header();
+// if (!is_user_logged_in()) {
+//   wp_redirect(site_url() . '/signin');
+//   exit;
+// }
+// $current_user = wp_get_current_user();
+ include( get_stylesheet_directory() . '/dash-header.php');
 ?>
-<html>
-<head>
-<meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-                <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/signupstyle.css">
-                <script>
-                function validate(){
-                 // alert("hi");
-                 var pswdmsg="";
-                 var zpmsg="";
-                 var pswd=document.getElementById("pass").value;
-                 var zpcode=document.getElementById("zipcode").value;
-                 var regexp = /^[0-9]{5}(?:-[0-9]{4})?$/;
-                 if(pswd!=regexp){
-                 pswdmsg+="sorry your password must contain 6 charcters only";
-                 }
-                  if(zpcode!=regexp){
-                    zpmsg+="sorry your zipcode must contain 6 digits only";
-                  }
-                  document.getElementById("demo").innerHTML=pswdmsg;
-                  document.getElementById("dmo").innerHTML=zpmsg;
-                }
-                </script>
-     </head>
 <body>
 <br>
 <br>
@@ -43,17 +21,17 @@ get_header();
 <h2>Signup here</h2>
 <div>
 <label>Companyname</label>
-<input type="text" name="mepr_companyname" class="form-control" size="40">
+<input type="text" class="form-control" name="mepr_companyname" size="40">
 </div>
 
 <div>
 <label>Email</label>
-<input type="email" name="email" class="form-control" size="40">
+<input type="email" class="form-control" name="email" size="40">
 </div>
 
 <div>
 <label>Password</label>
-<input type="password" id="pass" name="pass" class="form-control" size="40">
+<input type="password" class="form-control" id="pass" name="pass" size="40">
 </div>
 <div id="demo">
 
@@ -81,15 +59,15 @@ get_header();
 </div>
 <div>
 <label>Primary Administration name</label>
-<input type="text" class="form-control" name="mepr_primary_administrator_name" size="40">
+<input type="text" class="form-control" name="mepr_primary_admin_name" size="40">
 </div>
 <div>
 <label>Primary Administration email</label>
-<input type="text" class="form-control" name="mepr_primary_administrator_email" size="40">
+<input type="text" class="form-control" name="mepr_primary_admin_email" size="40">
 </div>
 <div>
 <label>City</label>
-<input type="text" name="mepr_cityname" class="form-control" size="40">
+<input type="text" name="mepr_cityname" class="form-control">
 </div>
 
 <div>
@@ -105,7 +83,7 @@ get_header();
 <br>
 <div>
 <label>Zipcode</label>
-<input type="text" id="zipcode" name="mepr_zipcode" class="form-control" size="40">
+<input type="text" class="form-control" id="zipcode" name="mepr_zipcode">
 </div>
 <div id="dmo">
 
@@ -130,7 +108,6 @@ get_header();
 <br>
 <br>
 </body>
-</html>
 <?php
    if(isset($_POST['BtnSubmit'])){
     $userName = get_radnom_unique_username();
@@ -156,12 +133,10 @@ get_header();
    update_user_meta($userid,'mepr_cityname',$_POST['mepr_cityname']);
    update_user_meta($userid,'mepr_state',$_POST['mepr_state']);
   update_user_meta($userid,'mepr_zipcode',$_POST['mepr_zipcode']);
-  update_user_meta($userid,'mepr_primary_administrator_name',$_POST['mepr_primary_administrator_name']);
-  update_user_meta($userid,'mepr_primary_administrator_email',$_POST['mepr_primary_administrator_email']);
+  update_user_meta($userid,'mepr_primary_admin_name',$_POST['mepr_primary_admin_name']);
+  update_user_meta($userid,'mepr_primary_admin_email',$_POST['mepr_primary_admin_email']);
 
  } 
    }
 ?>
-<?php
-get_footer();
-?>
+<?php include( get_stylesheet_directory() . '/dash-footer.php'); ?>
