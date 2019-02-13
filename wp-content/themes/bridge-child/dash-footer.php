@@ -20,6 +20,30 @@
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.dirrty.js"></script>
 <script src="<?php echo site_url(); ?>/wp-content/themes/bridge-child/js/custom_script.js"></script>
 <script>
+  
+    jQuery(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    jQuery('#assoc tfoot th').each( function () {
+        var title = jQuery(this).text();
+        jQuery(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = jQuery('#assoc').DataTable();
+ 
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        jQuery( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+} );
     jQuery('#assoc').DataTable();
     jQuery('#basic').flagStrap({
         countries: {
