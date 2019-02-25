@@ -26,6 +26,9 @@
   <link href="<?php echo get_stylesheet_directory_uri(); ?>/css/flags.css" rel="stylesheet" type="text/css" />
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/prettify.min.js"></script>
     <script type="text/javascript" src="<?php echo site_url(); ?>/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/cmpny.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/signupstyle.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/searchstyle.css">
 </head>
 
 <body class="">
@@ -50,7 +53,10 @@
               <p>Edit Profile</p>
             </a>
           </li>
-          <?php $current_user = wp_get_current_user(); ?>
+          <?php $current_user = wp_get_current_user();
+    
+          ?>
+
           <?php if ($current_user->roles[0] == 'operator') { ?>
           <li class="nav-item <?php if(is_page('operator-entry')) { ?>active<?php } ?>">
             <a class="nav-link" href="<?php echo site_url(); ?>/operator-entry/">
