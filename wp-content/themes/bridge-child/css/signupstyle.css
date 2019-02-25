@@ -1,0 +1,29 @@
+#reg-form{
+    height:auto;
+    width:600px;
+    margin-left:200px;
+}
+button{
+background:yellow;border:none;height:40px;width:200px;
+color:white;
+font-size:20px;
+border: 1px solid white;
+margin-left:150px;
+}
+/* .signupInput{
+    border:1!important;
+     background:none!important;
+} */
+button:hover{
+color:yellow;
+background: white;
+border:1px solid yellow;
+}
+#bg-dv{
+    background:white;
+    margin-left:40px;
+    margin-right:40px;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+

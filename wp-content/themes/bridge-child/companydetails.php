@@ -8,9 +8,9 @@
 
  //$current_user = wp_get_current_user();
  ?>
-
- <?php include( get_stylesheet_directory() . '/dash-header.php'); ?>
-
+ <?php
+  include( get_stylesheet_directory() . '/dash-header.php');
+ ?>
 <div class="content">
 <div class="container-fluid tab-info-sec">
 <div class="row">	
@@ -21,12 +21,12 @@
     <div class="alert mt-20 alert-danger alert-dismissible text-center responseError" style="display:none;">
                                 
     </div>
-    <table class="table-header" id="assoc">
+    <table class="table table-responsive" id="assoc">
 	<thead>
 		<tr class="table-heading">
-         <th>Company Name #</th>
-		  <th>Primary Admin Name</th>
-		  <th>Primary Admail Email</th>
+         <th>CompanyName #</th>
+		  <th>PrimaryAdmnName</th>
+		  <th>PrimaryAdmnEmail</th>
 		  <th>City</th>
           <th>State</th>
 		 <th>Country</th>
@@ -60,7 +60,7 @@
     </tbody>
     <tfoot>
               <tr>
-                <th>CompanyName</th>
+                <th>Company Name #</th>
                 <th>Primary admin name</th>
                 <th>Primary admin email</th>
                 <th>City</th>

@@ -12,33 +12,28 @@
 <body>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div id="bg-dv">
 <form id="reg-form" method="post">
-<h2>Signup here</h2>
 <div>
 <label>Companyname</label>
-<input type="text" class="form-control" name="mepr_companyname" size="40">
+<input type="text" class="form-control signupInput" name="mepr_companyname" size="40">
 </div>
 
 <div>
 <label>Email</label>
-<input type="email" class="form-control" name="email" size="40">
+<input type="email" class="form-control signupInput" name="email" size="40">
 </div>
 
 <div>
 <label>Password</label>
-<input type="password" class="form-control" id="pass" name="pass" size="40">
+<input type="password" class="form-control signupInput" id="pass" name="pass" size="40">
 </div>
 <div id="demo">
 
 </div>
 <div>
 <label>Country</label>
-<select class="form-control" name="mepr_countryname">
+<select class="form-control signupInput" name="mepr_countryname">
 <option value="">select</option>
   <option value="australia">Australia</option>
   <option value="usa">Usa</option>
@@ -50,29 +45,29 @@
 
 <div>
 <label>Address1</label>
-<input type="text" class="form-control" name="mepr_address1" size="40">
+<input type="text" class="form-control signupInput" name="mepr_address1" size="40">
 </div>
 
 <div>
 <label>Address2</label>
-<input type="text" class="form-control" name="mepr_address2" size="40">
+<input type="text" class="form-control signupInput" name="mepr_address2" size="40">
 </div>
 <div>
 <label>Primary Administration name</label>
-<input type="text" class="form-control" name="mepr_primary_admin_name" size="40">
+<input type="text" class="form-control signupInput" name="mepr_primary_admin_name" size="40">
 </div>
 <div>
 <label>Primary Administration email</label>
-<input type="text" class="form-control" name="mepr_primary_admin_email" size="40">
+<input type="text" class="form-control signupInput" name="mepr_primary_admin_email" size="40">
 </div>
 <div>
 <label>City</label>
-<input type="text" name="mepr_cityname" class="form-control">
+<input type="text" name="mepr_cityname" class="form-control signupInput">
 </div>
 
 <div>
 <label>State</label>
-<select class="form-control" name="mepr_state">
+<select class="form-control signupInput" name="mepr_state">
 <option value="">select</option>
 <option value="alabama">alabama</option>
 <option value="alaska">alaska</option>
@@ -83,31 +78,21 @@
 <br>
 <div>
 <label>Zipcode</label>
-<input type="text" class="form-control" id="zipcode" name="mepr_zipcode">
+<input type="text" class="form-control signupInput" id="zipcode" name="mepr_zipcode">
 </div>
 <div id="dmo">
 
 </div>
 <br>
 <div>
-<button name="BtnSubmit" onclick="validate()" type="submit">Signup</button>
+<button name="BtnSubmit" type="submit">Signup</button>
 </div>
 </form>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+</div>
 <br>
 <br>
 </body>
+
 <?php
    if(isset($_POST['BtnSubmit'])){
     $userName = get_radnom_unique_username();
