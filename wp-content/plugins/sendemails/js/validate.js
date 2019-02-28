@@ -1,4 +1,15 @@
+
+jQuery(document).ready(function(){
+jQuery("#tbl").DataTable({
+paging:true,
+scrollY:400,
+searching:true
+});
+});
+
 jQuery(document).ready(function($) {
+ 
+
   jQuery("button").click(function(){
      // alert("hi");
       jQuery('#formid').validate({
@@ -24,4 +35,3 @@ jQuery(document).ready(function($) {
  });
 }); 
  });
-
